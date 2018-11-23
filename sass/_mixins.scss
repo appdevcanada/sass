@@ -1,1 +1,65 @@
 // mixins
+@mixin box-size($property) {
+    -webkit-box-sizing: $property;
+    box-sizing: $property;
+}
+
+@mixin nav-a-shared {
+    flex-basis: 20%;
+    line-height: 2rem;
+    min-height: 2rem;
+    border: none;
+    border-left: 1px solid $lightgrey;
+    background-color: $white;
+}
+
+@mixin bg-data($bgc, $clr) {
+    background-color: $bgc;
+    color: $clr;
+}
+
+@mixin flx-data($bs, $gr, $sh) {
+    flex-basis: $bs;
+    flex-grow: $gr;
+    flex-shrink: $sh;
+}
+
+@mixin flx-align($fd, $jc, $ai) {
+    flex-direction: $fd;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin media-hdr-lg {
+    display: inline;
+    @content;
+    vertical-align: baseline;
+    float: none;
+    font-size: 4rem;
+    line-height: 6.3968rem;
+}
+
+@mixin media-hdr-span {
+    float: none;
+    letter-spacing: 0.25rem;
+    font-size: 3.998rem;
+    /** 1 lines of 3.998 * 1.6 = 6.3968 **/
+    text-align: left;
+}
+
+@mixin h4-lang($blk, $nn1, $nn2, $nn3) {
+    footer h4[lang=#{$blk}] {
+        display: block;
+    }
+
+    footer h4[lang=#{$nn1}],
+    footer h4[lang=#{$nn2}],
+    footer h4[lang=#{$nn3}] {
+        display: none;
+    }
+}
+
+@mixin fs-pad ($fs, $pad) {
+    font-size: #{$fs}rem;
+    padding: $pad;
+}
